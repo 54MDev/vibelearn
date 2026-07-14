@@ -31,34 +31,139 @@
     font-family: 'Outfit', system-ui, sans-serif;
   }
 
+  a { color: inherit; }
+
   main {
     max-width: 640px;
     margin: 0 auto;
     padding: 0 20px 60px;
   }
 
-  section {
-    padding: 48px 0;
+  @media (min-width: 768px) {
+    main { max-width: 860px; padding: 0 32px 80px; }
+  }
+
+  @media (min-width: 1024px) {
+    main { max-width: 1024px; padding: 0 40px 100px; }
+  }
+
+  /* nav */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(13,13,18,0.85);
+    backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .nav-logo {
+    font-weight: 800;
+    font-size: 1.15rem;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: none;
+    gap: 28px;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    transition: color 0.15s ease;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  @media (min-width: 768px) {
+    .nav-links { display: flex; align-items: center; }
+  }
+
+  .nav .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(42,42,53,0.6);
   }
 
   section:last-of-type { border-bottom: none; }
 
+  @media (min-width: 768px) {
+    section { padding: 64px 0; }
+  }
+
+  @media (min-width: 1024px) {
+    section { padding: 96px 0; }
+  }
+
+  .eyebrow {
+    display: block;
+    color: var(--accent);
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
   .hero {
     text-align: center;
-    padding-top: 56px;
+    padding-top: 48px;
+    padding-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    width: 640px;
+    height: 640px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(200,255,0,0.16) 0%, rgba(200,255,0,0) 65%);
+    pointer-events: none;
+    z-index: -1;
   }
 
   .hero h1 {
+    position: relative;
     font-size: clamp(2.6rem, 12vw, 3.6rem);
     font-weight: 800;
     margin: 0 0 16px;
+  }
+
+  @media (min-width: 1024px) {
+    .hero { padding-top: 64px; padding-bottom: 56px; }
+    .hero h1 { font-size: 4.6rem; }
   }
 
   .tagline {
     font-size: 1.15rem;
     color: var(--text-dim);
     margin: 0 0 28px;
+  }
+
+  @media (min-width: 1024px) {
+    .tagline { font-size: 1.35rem; white-space: nowrap; margin: 0 auto 36px; }
   }
 
   .typing::after {
@@ -71,6 +176,10 @@
     50% { opacity: 0; }
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    .typing::after { animation: none; }
+  }
+
   .btn {
     display: inline-block;
     background: var(--accent);
@@ -81,15 +190,26 @@
     padding: 16px 32px;
     border-radius: 999px;
     box-shadow: 0 0 0 rgba(200,255,0,0.5);
-    transition: transform 0.15s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
 
   .btn:active { transform: scale(0.97); }
+
+  @media (min-width: 768px) {
+    .btn:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 24px rgba(200,255,0,0.4);
+    }
+  }
 
   h2 {
     font-size: 1.6rem;
     font-weight: 700;
     margin: 0 0 20px;
+  }
+
+  @media (min-width: 1024px) {
+    h2 { font-size: 2rem; }
   }
 
   .card {
@@ -98,6 +218,11 @@
     border-radius: 16px;
     padding: 20px;
     margin-bottom: 14px;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  @media (min-width: 768px) {
+    .card:hover { border-color: rgba(200,255,0,0.5); }
   }
 
   .card.highlight {
@@ -123,6 +248,32 @@
     font-weight: 500;
   }
 
+  .sessions-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .sessions-grid .card { margin-bottom: 0; }
+
+  @media (min-width: 768px) {
+    .sessions-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  }
+
+  .explain-layout {
+    display: block;
+  }
+
+  @media (min-width: 1024px) {
+    .explain-layout {
+      display: flex;
+      gap: 48px;
+      align-items: flex-start;
+    }
+    .explain-layout h2 { flex: 0 0 260px; margin: 0; }
+    .explain-layout .explain-body { flex: 1; }
+  }
+
   .explain p {
     font-size: 1.05rem;
     margin: 0 0 12px;
@@ -134,9 +285,17 @@
     gap: 12px;
   }
 
+  @media (min-width: 768px) {
+    .grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
   .grid .card {
     text-align: center;
     margin-bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    .grid .card:hover { transform: translateY(-4px); }
   }
 
   .grid .emoji {
@@ -147,6 +306,14 @@
 
   .join {
     text-align: center;
+    position: relative;
+  }
+
+  @media (min-width: 1024px) {
+    .join {
+      box-shadow: 0 0 0 100vmax rgba(200,255,0,0.05);
+      clip-path: inset(0 -100vmax);
+    }
   }
 
   .join p {
@@ -155,19 +322,41 @@
   }
 
   footer {
-    text-align: center;
     padding: 32px 0;
     color: var(--text-dim);
     font-size: 0.9rem;
+    text-align: center;
   }
 
   footer a {
     color: var(--accent);
     text-decoration: none;
   }
+
+  @media (min-width: 768px) {
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
 </style>
 </head>
 <body>
+
+<div class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">VibeLearn ⚡</a>
+    <div class="nav-links">
+      <a href="#sessions">Sessions</a>
+      <a href="resources.html">Resources</a>
+    </div>
+    <a class="btn" href="#">I want in 🙋</a>
+    <!-- swap href for the Google Form link -->
+  </div>
+</div>
+
 <main>
 
   <section class="hero">
@@ -177,30 +366,33 @@
     <!-- swap href for the Google Form link -->
   </section>
 
-  <section>
+  <section id="sessions">
+    <span class="eyebrow">01 — Sessions</span>
     <h2>Next sessions 🗓️</h2>
 
-    <div class="card highlight">
-      <div class="date">Coming soon</div>
-      <div class="meta">Library name · Room · Time</div>
-      <div class="topic">First session details TBD</div>
-    </div>
-
-    <div class="card">
-      <div class="date">Coming soon</div>
-      <div class="meta">Library name · Room · Time</div>
-      <div class="topic">Session details TBD</div>
+    <div class="sessions-grid">
+      <div class="card highlight">
+        <div class="date">Every Thursday</div>
+        <div class="meta">Ashburn Public Library · Room 1A · 1–2pm</div>
+        <div class="topic">Vibecoding</div>
+      </div>
     </div>
   </section>
 
   <section class="explain">
-    <h2>What's vibecoding? 🤔</h2>
-    <p>It's coding with AI as your pair — you describe what you want, it writes code with you.</p>
-    <p>No years of syntax memorizing. You focus on ideas, the AI handles the boring parts.</p>
-    <p>You'll still learn real skills — just way faster, and way more fun.</p>
+    <span class="eyebrow">02 — How it works</span>
+    <div class="explain-layout">
+      <h2>What's vibecoding? 🤔</h2>
+      <div class="explain-body">
+        <p>It's coding with AI as your pair — you describe what you want, it writes code with you.</p>
+        <p>No years of syntax memorizing. You focus on ideas, the AI handles the boring parts.</p>
+        <p>You'll still learn real skills — just way faster, and way more fun.</p>
+      </div>
+    </div>
   </section>
 
   <section>
+    <span class="eyebrow">03 — Outcomes</span>
     <h2>What you'll make 🛠️</h2>
     <div class="grid">
       <div class="card"><span class="emoji">🎮</span>A game</div>
@@ -211,6 +403,7 @@
   </section>
 
   <section class="join">
+    <span class="eyebrow">04 — Join</span>
     <h2>How to join</h2>
     <p>It's free. Grab a spot 👇</p>
     <a class="btn" href="#">I want in 🙋</a>
