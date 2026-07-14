@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VibeLearn ⚡ Free AI coding classes for teens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d12;
+    --bg-card: #17171f;
+    --accent: #c8ff00;
+    --text: #f2f2f5;
+    --text-dim: #9a9aa5;
+    --border: #2a2a35;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, .btn {
+    font-family: 'Outfit', system-ui, sans-serif;
+  }
+
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  section {
+    padding: 48px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  .hero {
+    text-align: center;
+    padding-top: 56px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 12vw, 3.6rem);
+    font-weight: 800;
+    margin: 0 0 16px;
+  }
+
+  .tagline {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    margin: 0 0 28px;
+  }
+
+  .typing::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    color: var(--accent);
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #0d0d12;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 999px;
+    box-shadow: 0 0 0 rgba(200,255,0,0.5);
+    transition: transform 0.15s ease;
+  }
+
+  .btn:active { transform: scale(0.97); }
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 20px;
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 14px;
+  }
+
+  .card.highlight {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+
+  .card .date {
+    color: var(--accent);
+    font-weight: 700;
+    font-family: 'Outfit', system-ui, sans-serif;
+    font-size: 1.05rem;
+  }
+
+  .card .meta {
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    margin-top: 4px;
+  }
+
+  .card .topic {
+    margin-top: 10px;
+    font-weight: 500;
+  }
+
+  .explain p {
+    font-size: 1.05rem;
+    margin: 0 0 12px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .grid .card {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .grid .emoji {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .join {
+    text-align: center;
+  }
+
+  .join p {
+    color: var(--text-dim);
+    margin-bottom: 20px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <section class="hero">
+    <h1>VibeLearn ⚡</h1>
+    <p class="tagline typing">Build real apps with AI. No experience needed. Free at the library.</p>
+    <a class="btn" href="#">I want in 🙋</a>
+    <!-- swap href for the Google Form link -->
+  </section>
+
+  <section>
+    <h2>Next sessions 🗓️</h2>
+
+    <div class="card highlight">
+      <div class="date">Coming soon</div>
+      <div class="meta">Library name · Room · Time</div>
+      <div class="topic">First session details TBD</div>
+    </div>
+
+    <div class="card">
+      <div class="date">Coming soon</div>
+      <div class="meta">Library name · Room · Time</div>
+      <div class="topic">Session details TBD</div>
+    </div>
+  </section>
+
+  <section class="explain">
+    <h2>What's vibecoding? 🤔</h2>
+    <p>It's coding with AI as your pair — you describe what you want, it writes code with you.</p>
+    <p>No years of syntax memorizing. You focus on ideas, the AI handles the boring parts.</p>
+    <p>You'll still learn real skills — just way faster, and way more fun.</p>
+  </section>
+
+  <section>
+    <h2>What you'll make 🛠️</h2>
+    <div class="grid">
+      <div class="card"><span class="emoji">🎮</span>A game</div>
+      <div class="card"><span class="emoji">🌐</span>A website</div>
+      <div class="card"><span class="emoji">🤖</span>A bot</div>
+      <div class="card"><span class="emoji">💡</span>Your own idea</div>
+    </div>
+  </section>
+
+  <section class="join">
+    <h2>How to join</h2>
+    <p>It's free. Grab a spot 👇</p>
+    <a class="btn" href="#">I want in 🙋</a>
+    <!-- swap href for the Google Form link -->
+  </section>
+
+</main>
+
+<footer>
+  <a href="mailto:cherrystoneplace@gmail.com">cherrystoneplace@gmail.com</a>
+  · <a href="resources.html">Resources</a>
+</footer>
+
+</body>
+</html>

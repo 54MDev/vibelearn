@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources — VibeLearn ⚡</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d12;
+    --bg-card: #17171f;
+    --accent: #c8ff00;
+    --text: #f2f2f5;
+    --text-dim: #9a9aa5;
+    --border: #2a2a35;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Outfit', system-ui, sans-serif;
+  }
+
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  header {
+    padding: 32px 0 8px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  header a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 20px;
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 14px;
+  }
+
+  .card h3 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+  }
+
+  .card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+  }
+
+  .card a {
+    color: var(--accent);
+  }
+
+  .empty {
+    color: var(--text-dim);
+    font-style: italic;
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px 0;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>VibeLearn ⚡</h1>
+    <a href="index.html">← Home</a>
+  </header>
+
+  <section>
+    <h2>Start here 🧰</h2>
+
+    <div class="card">
+      <h3>Claude</h3>
+      <p>The AI you'll pair with in class — you chat with it in plain English and it writes code with you.</p>
+    </div>
+
+    <div class="card">
+      <h3>A code editor</h3>
+      <p>Where your project lives. We'll set this up together on day one — nothing to install beforehand.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>From class 📚</h2>
+    <p class="empty">Slides and materials go here after each session — check back after week one.</p>
+  </section>
+
+  <section>
+    <h2>Keep going 🚀</h2>
+
+    <div class="card">
+      <h3>Build something small</h3>
+      <p>Pick one idea from class and make your own version. Small and finished beats big and half-done.</p>
+    </div>
+
+    <div class="card">
+      <h3>Free links</h3>
+      <p>More good stuff added here as we find it.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <a href="mailto:cherrystoneplace@gmail.com">cherrystoneplace@gmail.com</a>
+  · <a href="index.html">Home</a>
+</footer>
+
+</body>
+</html>
